@@ -14,7 +14,7 @@ const partialPath = path.join(__dirname, '../templates/partials')
 
 //setup handlebars engine and views location
 const app = express()
-const port = process.env.port  ||3000
+const port = process.env.PORT  ||3000
 
 app.set('view engine', 'hbs')  // to tell express use hbs ->use internally handlebars
 app.set('views', viewsPath)
