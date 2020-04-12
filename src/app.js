@@ -14,6 +14,8 @@ const partialPath = path.join(__dirname, '../templates/partials')
 
 //setup handlebars engine and views location
 const app = express()
+const port = process.env.port  ||3000
+
 app.set('view engine', 'hbs')  // to tell express use hbs ->use internally handlebars
 app.set('views', viewsPath)
 hbs.registerPartials(partialPath)
@@ -105,8 +107,8 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('Server is started')
+app.listen(port, () => {
+  console.log('Server is started on port ' + port)
 })
 
 
